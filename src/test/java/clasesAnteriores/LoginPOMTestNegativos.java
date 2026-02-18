@@ -1,17 +1,20 @@
+package clasesAnteriores;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.example.pages.LoginPage;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.example.pages.clasesAnteriores.LoginPage;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class LoginPOMTestNegativos {
 
     WebDriver driver = null;
     private static final String BASE_URL = "https://demo.guru99.com/test/newtours/index.php";
 
-    @BeforeEach
+    @BeforeTest
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -27,7 +30,7 @@ public class LoginPOMTestNegativos {
     }
 
 
-    @AfterEach
+    @AfterTest
     public void tearDown(){
         driver.quit();
     }
