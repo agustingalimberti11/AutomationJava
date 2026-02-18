@@ -1,17 +1,17 @@
 package clasesAnteriores;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class registroTest {
     WebDriver driver = null;
 
-    @BeforeEach
+    @BeforeTest
     public void setUp(){
         System.out.println("-------EJECUTANDO LA CONFIGURACION--------");
         WebDriverManager.chromedriver().setup();
@@ -35,7 +35,7 @@ public class registroTest {
         driver.findElement(By.name("submit")).click();
     }
 
-    @AfterEach
+    @AfterTest
     public void tearDown(){
         driver.quit();
     }

@@ -1,4 +1,4 @@
-package org.example.pages;
+package org.example.pages.clasesAnteriores;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
