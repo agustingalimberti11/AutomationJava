@@ -11,11 +11,18 @@ public class BusquedaProductosML extends BaseTestNG{
         driver.get(BASE_URL);
     }
 
-    @Test
-    public void testBusquedaProducto(){
+    @DataProvider(name = "productos")
+    public Object[][] datosPsuarios() {
+        return new Object[][]{
+                {"pantalon"},
+                {"remera"},
+        };
+    }
+    @Test(description = "Busqueda productos - parametrizado para 2 productos", dataProvider = "productos")
+    public void testBusquedaProducto(String producto){
         //instanciar la page LoginPage usando Page Factory
         HomePageML homeML = new HomePageML(driver);
-        homeML.buscarProducto();
+        homeML.buscarProducto(producto);
         SummaryProductosPage summaryProductosML = new SummaryProductosPage(driver);
         summaryProductosML.clickAlPrimerProducto();
         ProductosPage productosML = new ProductosPage(driver);
