@@ -21,9 +21,9 @@ public class HomePageML extends BasePage{
     }
 
     //acciones
-    public void buscarProducto(){
+    public void buscarProducto(String productos){
         click(inputProductos);
-        clearAndSendKeys(inputProductos, "Pantalones");
+        clearAndSendKeys(inputProductos, productos);
         sendKeysEnter(inputProductos);
     }
 }
