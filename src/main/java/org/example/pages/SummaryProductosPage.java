@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SummaryProductosPage {
+public class SummaryProductosPage extends BasePage{
     private WebDriver driver;
 
     //elementos -> PAGE FACTORY
@@ -15,12 +15,12 @@ public class SummaryProductosPage {
 
     //constructor de este objeto
     public SummaryProductosPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
     //acciones
     public void clickAlPrimerProducto(){
-        titleProducto.click();
+        click(titleProducto);
     }
 }

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePageML {
+public class HomePageML extends BasePage{
     private WebDriver driver;
 
     //elementos -> PAGE FACTORY
@@ -16,14 +16,14 @@ public class HomePageML {
 
     //constructor de este objeto
     public HomePageML(WebDriver driver){
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
     //acciones
     public void buscarProducto(){
-        inputProductos.click();
-        inputProductos.sendKeys("Pantalones");
-        inputProductos.sendKeys(Keys.ENTER);
+        click(inputProductos);
+        clearAndSendKeys(inputProductos, "Pantalones");
+        sendKeysEnter(inputProductos);
     }
 }

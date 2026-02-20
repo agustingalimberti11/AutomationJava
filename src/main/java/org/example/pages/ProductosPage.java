@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ProductosPage {
+public class ProductosPage extends BasePage{
     private WebDriver driver;
 
     //elementos -> PAGE FACTORY
@@ -16,13 +16,13 @@ public class ProductosPage {
 
     //constructor de este objeto
     public ProductosPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
     //acciones
     public void elegirTalle(){
-        comboBoxElegirTalle.click();
-        talle.click();
+        click(comboBoxElegirTalle);
+        click(talle);
     }
 }
