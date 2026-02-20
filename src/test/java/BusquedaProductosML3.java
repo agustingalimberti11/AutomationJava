@@ -1,9 +1,10 @@
 import org.example.pages.HomePageML;
 import org.example.pages.ProductosPage;
 import org.example.pages.SummaryProductosPage;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-public class BusquedaProductosML extends BaseTestNG{
+public class BusquedaProductosML3 extends BaseTestNG{
     private static final String BASE_URL = "https://www.mercadolibre.com.ar/";
 
     @BeforeMethod
@@ -21,4 +22,5 @@ public class BusquedaProductosML extends BaseTestNG{
         ProductosPage productosML = new ProductosPage(driver);
         productosML.elegirTalle();
     }
+
 }
